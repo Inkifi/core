@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<config
+	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+	xsi:noNamespaceSchemaLocation='urn:magento:framework:ObjectManager/etc/config.xsd'
+>
+<!-- 2018-07-05
+Set the «Payment Complete» status to the orders paid by a discount code:
+https://github.com/inkifi/core/issues/1 -->
+	<type name='Magento\Payment\Model\Method\Free'>
+		<plugin
+			name='Inkifi\Core\Plugin\Payment\Model\Method\Free'
+			type='Inkifi\Core\Plugin\Payment\Model\Method\Free'
+		/>
+	</type>
+</config>
