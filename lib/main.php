@@ -6,6 +6,7 @@ use Magento\Store\Model\Store as S;
  * «Modify orders numeration for Mediaclip»
  * https://github.com/Inkifi-Connect/Media-Clip-Inkifi/issues/1
  * @used-by \Mangoit\MediaclipHub\Controller\Index\OrderStatusUpdateEndpoint::execute()
+ * @used-by \Mangoit\MediaclipHub\Controller\Index\PwintyOrderStatusUpdate::execute()
  * @param string $v
  * @return string
  */
