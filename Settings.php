@@ -34,6 +34,7 @@ final class Settings extends \Df\Config\Settings {
 	 * @used-by \Mangoit\MediaclipHub\Helper\Data::getMediaClipOrderLinesDetails()
 	 * @used-by \Mangoit\MediaclipHub\Helper\Data::getMediaClipOrders()
 	 * @used-by \Mangoit\MediaclipHub\Helper\Data::getMediaClipProjects()
+	 * @used-by \Mangoit\MediaclipHub\Helper\Data::GetTokenForEndUser()
 	 * @used-by \Mangoit\MediaclipHub\Helper\Data::renewMediaClipToken()
 	 * @used-by \Mangoit\MediaclipHub\Helper\Data::RenewToken()
 	 * @param null|string|int|S|Store|array(string, int) $s [optional]
