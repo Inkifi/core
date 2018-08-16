@@ -1,6 +1,7 @@
 <?php
 use Magento\Sales\Model\Order as O;
-use Magento\Store\Model\Store as S;
+use Magento\Store\Model\Store;
+use Inkifi\Core\Settings as S;
 /**
  * 2018-08-16
  * «Modify orders numeration for Mediaclip»
@@ -22,6 +23,6 @@ function ikf_eti($v) {return df_last(explode('-', $v));}
  * @return string
  */
 function ikf_ite($v) {return dfcf(function($v) {
-	list($v, $s) = $v instanceof O ? [$v->getId(), $v->getStore()] : [$v, null]; /** @var S|null $s */
-	return !df_contains(df_cfg('api/api_auth/api_id', $s), 'staging') ? $v : "staging-$v";
+	list($v, $s) = $v instanceof O ? [$v->getId(), $v->getStore()] : [$v, null]; /** @var Store|null $s */
+	return !df_contains(S::s()->id($s), 'staging') ? $v : "staging-$v";
 }, [$v]);}
