@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<config
+	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+	xsi:noNamespaceSchemaLocation='urn:magento:framework:ObjectManager/etc/config.xsd'
+>
+<!-- 2018-08-22
+"Implement an ability to add alternate URLs to products":
+https://github.com/inkifi/core/issues/2 -->
+	<type name='Magento\Catalog\Block\Product\View'>
+		<plugin
+			name='Inkifi\Core\Plugin\Catalog\Block\Product\View'
+			type='Inkifi\Core\Plugin\Catalog\Block\Product\View'
+		/>
+	</type>
+</config>
