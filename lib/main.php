@@ -1,7 +1,9 @@
 <?php
+use Exception as E;
+use Inkifi\Core\Settings as S;
+use Magento\Framework\DataObject;
 use Magento\Sales\Model\Order as O;
 use Magento\Store\Model\Store;
-use Inkifi\Core\Settings as S;
 /**
  * 2018-08-16
  * «Modify orders numeration for Mediaclip»
@@ -12,6 +14,13 @@ use Inkifi\Core\Settings as S;
  * @return string
  */
 function ikf_eti($v) {return df_last(explode('-', $v));}
+
+/**
+ * 2018-09-11
+ * @used-by \Mangoit\MediaclipHub\Controller\Index\RenewMediaclipToken::execute()
+ * @param DataObject|mixed[]|mixed|E $v
+ */
+function ikf_log($v) {df_log_l('Inkifi_Core', $v); df_sentry('Inkifi_Core', $v);}
 
 /**
  * 2018-08-16
