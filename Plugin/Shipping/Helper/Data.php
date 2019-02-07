@@ -43,9 +43,10 @@ final class Data {
 	 * @return string|null
 	 */
     private static function dfTrackUrl(Track $t) {return
-		!df_starts_with($c = $t->getCarrierCode(), 'shqcustom') || !($n = $t->getTrackNumber()) ? null :
+		!df_starts_with($c = $t->getCarrierCode(), 'shqcustom') || !($n = $t->getTrackNumber()) ? null : (
 			df_contains($c, 'ups')
 				? "https://www.ups.com/track?loc=en_US&tracknum=$n"
 				: "https://tools.usps.com/go/TrackConfirmAction?tLabels=$n"
-    ;}
+		)
+	;}
 }
