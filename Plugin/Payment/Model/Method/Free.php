@@ -1,6 +1,5 @@
 <?php
 namespace Inkifi\Core\Plugin\Payment\Model\Method;
-use Magento\Payment\Model\Method\Free as Sb;
 // 2018-07-05
 final class Free {
 	/**
