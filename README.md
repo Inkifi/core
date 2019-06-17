@@ -3,6 +3,7 @@ A custom module for [inkifi.com](https://inkifi.com).
 ## How to install
 ```
 bin/magento maintenance:enable
+rm -rf composer.lock
 composer clear-cache
 composer require inkifi/core:*
 bin/magento setup:upgrade
