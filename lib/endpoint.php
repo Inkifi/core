@@ -1,6 +1,7 @@
 <?php
 use Closure as F;
-use Df\Framework\W\Result\Json as J;
+use Df\Framework\W\Result\Json;
+use Df\Framework\W\Result\Text;
 /**
  * 2020-03-04
  * @used-by \Inkifi\Pwinty\Controller\Index\Index::execute()
@@ -10,10 +11,12 @@ use Df\Framework\W\Result\Json as J;
  * @used-by \Mangoit\MediaclipHub\Controller\Index\OrderStatusUpdateEndpoint::execute()
  * @used-by \Mangoit\MediaclipHub\Controller\Index\RenewMediaclipToken::execute()
  * @param F $f
- * @return J
+ * @param string $onSuccess [optional]
+ * @param bool $plain [optional]
+ * @return Json|Text
  */
-function ikf_endpoint(F $f) {/** @var mixed $r */
-	try {$r = $f() ?: 'OK';}
+function ikf_endpoint(F $f, $onSuccess = 'OK', $plain = false) {/** @var mixed $r */
+	try {$r = $f() ?: $onSuccess;}
 	catch (\Exception $e) {
 		df_500(); // 2019-05-17 https://doc.mediaclip.ca/hub/store-endpoints#replying-with-errors
 		$r = ['code' => 500, 'message' => df_ets($e)];
@@ -22,5 +25,5 @@ function ikf_endpoint(F $f) {/** @var mixed $r */
 			throw $e; // 2016-03-27 It is convenient for me to the the exception on the screen.
 		}
 	}
-	return J::i($r);
+	return $plain ? Text::i($r) : Json::i($r);
 }
