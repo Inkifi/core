@@ -1,4 +1,4 @@
-A custom module for [inkifi.com](https://inkifi.com).
+A custom module for [inkifi.com](https://inkifi.com) (Magento 2).
 
 ## How to install
 ```
